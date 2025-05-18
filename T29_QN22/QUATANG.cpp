@@ -7,5 +7,6 @@ int main(){
     cout.tie(0);
 
     cout << "Hello world !";
+    cout << "Hello world !";
     return 0;
 }
