@@ -6,6 +6,6 @@ int main(){
     cin.tie(0);
     cout.tie(0);
 
-    cout << "Hello world!";
+    cout << "Hello wo!";
     return 0;
 }
