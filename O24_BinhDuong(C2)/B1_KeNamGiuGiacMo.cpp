@@ -25,7 +25,7 @@ int main(){
     
     while(T--){
         cin >> n >> k;
-        int arr[n], result, ucln = 0;
+        int arr[n], result, ucln;
         vector <int> arr1;
         for(int i = 0; i < n; ++i){
             cin >> arr[i];
@@ -33,7 +33,12 @@ int main(){
                 arr1.push_back(arr[i]);
             }
         }
-        for(int i = 1; i <=arr1.size(); ++i){
+        if(arr1.empty()){
+            cout << "-1\n";
+            continue;
+        }
+        ucln = arr1[0];
+        for(int i = 1; i < arr1.size(); ++i){
             ucln = gcd(ucln, arr1[i]);
         }
         cout << so_luong_uoc(ucln);        
