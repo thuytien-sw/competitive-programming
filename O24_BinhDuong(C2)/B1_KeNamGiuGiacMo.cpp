@@ -1,8 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void gcdVector(const vector<int>& v) {
+ if(v.empty()){
+  cout << "-1\n";
+ } else{
+    cout << accumulate(v.begin()  + 1, v.end(), v[0], gcd<int,  int>)  << "\n"; 
+   } 
+} 
+
 int so_luong_uoc(int n) {
-	int count = 0;
+ int count = 0;
 	for(int j = 1; j <= sqrt(n); ++j) {
 		if(n % j == 0) {
 			if(n / j != j) {
@@ -25,7 +33,7 @@ int main(){
     
     while(T--){
         cin >> n >> k;
-        int arr[n], result, ucln;
+        int arr[n];
         vector <int> arr1;
         for(int i = 0; i < n; ++i){
             cin >> arr[i];
@@ -33,15 +41,7 @@ int main(){
                 arr1.push_back(arr[i]);
             }
         }
-        if(arr1.empty()){
-            cout << "-1\n";
-            continue;
-        }
-        ucln = arr1[0];
-        for(int i = 1; i < arr1.size(); ++i){
-            ucln = gcd(ucln, arr1[i]);
-        }
-        cout << so_luong_uoc(ucln);        
+        so_luong_uoc(gcdVector(arr1)) ;        
     }
 
 }
