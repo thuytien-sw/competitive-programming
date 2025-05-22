@@ -1,16 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 int gcdVector(const vector<int>& v) {
- if(v.empty()){
-  return -1;
- } else{
     return accumulate(v.begin()  + 1, v.end(), v[0], gcd<int,  int>); 
-   } 
 } 
 
 int so_luong_uoc(int n) {
  int count = 0;
- abs = sqrt(n);
+ int abs = sqrt(n);
 	for(int j = 1; j <= abs; ++j) {
 		if(n % j == 0) {
 			if(n / j != j) {
@@ -41,7 +37,11 @@ int main(){
                 arr1.push_back(arr[i]);
             }
         }
-        cout << so_luong_uoc(gcdVector(arr1)) << "\n";        
+        if(arr1.empty()) {
+            cout << -1 << "\n";
+        } else {
+           cout << so_luong_uoc(gcdVector(arr1)) << "\n"; 
+        }        
     }
 
 }
